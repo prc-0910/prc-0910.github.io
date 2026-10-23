@@ -102,6 +102,21 @@ h2{font:700 clamp(1.6rem,3.2vw,2.1rem)/1.15 var(--display);letter-spacing:-.015e
 .edu li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
 .edu b{font-weight:600}
 .edu span{color:var(--muted);font-size:.95rem}
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.case{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:22px;min-width:0}
+.ctag{font:500 .72rem var(--mono);color:var(--signal);letter-spacing:.04em}
+.case h3{font:600 1.15rem/1.3 var(--display);margin:6px 0 12px}
+.case dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px}
+.case dt{font:500 .72rem/1.9 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.case dd{margin:0;font-size:.97rem}
+.case strong{color:var(--accent)}
+.sub{font:600 1.2rem var(--display);margin:40px 0 16px}
+.flow{list-style:none;margin:0;padding:0;counter-reset:f;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.flow li{counter-increment:f;background:var(--sheet);padding:16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.flow li::before{content:counter(f,decimal-leading-zero);font:500 .78rem var(--mono);color:var(--accent)}
+.flow b{font-weight:600}
+.flow span{color:var(--muted);font-size:.9rem}
+@media (max-width:420px){.case dl{grid-template-columns:1fr}.case dt{line-height:1.2;margin-top:6px}}
 .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
 .timeline li{position:relative;padding:0 0 26px 24px}
 .timeline li:last-child{padding-bottom:0}
@@ -137,6 +152,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Expertise</a></li>
+      <li><a href="#work">Impact</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -220,9 +236,67 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   </div>
 </section>
 
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="label"><b>03 · impact</b>rg-highlights</div>
+    <div class="content">
+      <h2>Selected engagements</h2>
+      <p>Anonymised highlights from enterprise work. Client names are confidential.</p>
+      <div class="cases">
+        <article class="case">
+          <div class="ctag">landing zone · governance</div>
+          <h3>Standardised governance across 10+ subscriptions</h3>
+          <dl>
+            <dt>Challenge</dt><dd>Subscriptions grew without common policy, access control or network standards.</dd>
+            <dt>Approach</dt><dd>Designed a CAF-aligned landing zone with management groups, Azure Policy, RBAC and hub-spoke networking.</dd>
+            <dt>Outcome</dt><dd>One governed foundation that new workloads land on securely by default.</dd>
+          </dl>
+        </article>
+        <article class="case">
+          <div class="ctag">migration · assessment</div>
+          <h3>Migration roadmap for 100+ servers</h3>
+          <dl>
+            <dt>Challenge</dt><dd>A large on-premises estate with unclear dependencies, cost and risk.</dd>
+            <dt>Approach</dt><dd>Led Azure Migrate assessments, dependency mapping and right-sizing, then grouped workloads into waves.</dd>
+            <dt>Outcome</dt><dd>A costed migration and modernisation roadmap the customer could act on.</dd>
+          </dl>
+        </article>
+        <article class="case">
+          <div class="ctag">automation · iac</div>
+          <h3>Infrastructure as code with CI/CD</h3>
+          <dl>
+            <dt>Challenge</dt><dd>Manual, inconsistent infrastructure builds slowed delivery.</dd>
+            <dt>Approach</dt><dd>Built reusable Terraform modules and Azure DevOps pipelines for provisioning.</dd>
+            <dt>Outcome</dt><dd><strong>~60%</strong> faster infrastructure deployment.</dd>
+          </dl>
+        </article>
+        <article class="case">
+          <div class="ctag">finops · cost</div>
+          <h3>Cloud cost optimisation</h3>
+          <dl>
+            <dt>Challenge</dt><dd>Cloud spend rising faster than usage.</dd>
+            <dt>Approach</dt><dd>Applied FinOps practices: right-sizing, reservations and storage optimisation, backed by TCO and ROI models.</dd>
+            <dt>Outcome</dt><dd><strong>~25%</strong> reduction in cloud infrastructure costs.</dd>
+          </dl>
+        </article>
+      </div>
+
+      <h3 class="sub">How I run a presales engagement</h3>
+      <ol class="flow">
+        <li><b>Discover</b><span>Business goals, current estate, constraints</span></li>
+        <li><b>Workshop</b><span>Architecture sessions with customer stakeholders</span></li>
+        <li><b>Design</b><span>Target architecture, security and migration approach</span></li>
+        <li><b>Estimate</b><span>Sizing, Azure pricing, TCO and ROI</span></li>
+        <li><b>Propose</b><span>RFP response, solution deck, executive presentation</span></li>
+        <li><b>Hand over</b><span>POC validation and clean transition to delivery</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="certs">
   <div class="wrap">
-    <div class="label"><b>03 · credentials</b>rg-certifications</div>
+    <div class="label"><b>04 · credentials</b>rg-certifications</div>
     <div class="content">
       <h2>Certifications &amp; education</h2>
       <ul class="certs">
@@ -245,7 +319,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <section class="block" id="experience">
   <div class="wrap">
-    <div class="label"><b>04 · experience</b>rg-career</div>
+    <div class="label"><b>05 · experience</b>rg-career</div>
     <div class="content">
       <h2>Experience</h2>
       <ol class="timeline">
@@ -261,7 +335,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <section class="block" id="projects">
   <div class="wrap">
-    <div class="label"><b>05 · work</b>rg-projects</div>
+    <div class="label"><b>06 · projects</b>rg-projects</div>
     <div class="content">
       <h2>Projects</h2>
       <div class="projects">
@@ -275,7 +349,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <section class="block" id="contact">
   <div class="wrap">
-    <div class="label"><b>06 · contact</b>rg-connect</div>
+    <div class="label"><b>07 · contact</b>rg-connect</div>
     <div class="content">
       <h2>Let's talk cloud</h2>
       <p>Open to conversations about Azure architecture, presales and new opportunities.</p>
