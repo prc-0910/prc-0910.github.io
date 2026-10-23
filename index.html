@@ -1,0 +1,284 @@
+<title>Priyaranjan Chatterjee</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Priyaranjan Chatterjee — Azure Presales Solution Architect specialising in Azure presales, landing zones, migration and network design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one blueprint sheet — left resource-path labels, right content; hero carries a live hub-spoke topology */
+:root{
+  --paper:#f5f7f9; --sheet:#ffffff; --ink:#14212e; --muted:#5a6b7b; --line:#d6dfe7;
+  --accent:#0a6c95; --signal:#c77b12; --grid:rgba(10,108,149,.07);
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0e161e; --sheet:#131e28; --ink:#e3ebf2; --muted:#93a5b6; --line:#24333f;
+  --accent:#4cb3df; --signal:#e8a344; --grid:rgba(76,179,223,.07); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0e161e; --sheet:#131e28; --ink:#e3ebf2; --muted:#93a5b6; --line:#24333f;
+  --accent:#4cb3df; --signal:#e8a344; --grid:rgba(76,179,223,.07); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:12px}
+.mark{font:500 .85rem var(--mono);color:var(--ink);text-decoration:none;letter-spacing:.02em}
+.mark b{color:var(--accent)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:.95rem;flex-wrap:wrap}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--ink)}
+@media (max-width:640px){nav ul li:not(:last-child){display:none}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:64px 48px}
+.kicker{font:500 .78rem var(--mono);color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+h1{font:700 clamp(2.4rem,6vw,4.1rem)/1.02 var(--display);letter-spacing:-.025em;margin:14px 0 18px;text-wrap:balance}
+.role{font:500 1.2rem/1.4 var(--display);margin:0 0 14px}
+.lede{color:var(--muted);max-width:52ch;margin:0 0 28px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:4px;font:600 .95rem var(--body);text-decoration:none;border:1px solid var(--accent);transition:transform .15s}
+.btn.primary{background:var(--accent);color:var(--sheet)}
+.btn.ghost{color:var(--accent);background:transparent}
+.btn:hover{transform:translateY(-1px)}
+.topo{width:100%;max-width:420px;justify-self:center}
+.topo text{font:500 10px var(--mono);fill:var(--muted)}
+.topo .hub text{fill:var(--sheet);font-weight:500}
+.flow{stroke-dasharray:4 6;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-20}}
+@media (prefers-reduced-motion:reduce){.flow{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:40px 32px}.topo{max-width:340px}}
+
+/* sections */
+section.block{border-top:1px solid var(--line)}
+section.block .wrap{display:grid;grid-template-columns:180px 1fr;gap:32px;padding-block:56px}
+.label{font:500 .78rem/1.5 var(--mono);color:var(--muted);letter-spacing:.02em;padding-top:6px;word-break:break-all}
+.label b{display:block;color:var(--accent);font-weight:500}
+h2{font:700 clamp(1.6rem,3.2vw,2.1rem)/1.15 var(--display);letter-spacing:-.015em;margin:0 0 16px;text-wrap:balance}
+.content{min-width:0}
+.content p{max-width:65ch;margin:0 0 14px}
+@media (max-width:760px){section.block .wrap{grid-template-columns:1fr;gap:10px;padding-block:44px}}
+
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:24px}
+.fact{min-width:0}
+.fact .n{font:700 2rem/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.fact .t{font-size:.9rem;color:var(--muted)}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.svc{background:var(--sheet);padding:22px 22px 20px;min-width:0}
+.svc .tag{font:500 .72rem var(--mono);color:var(--signal);letter-spacing:.04em}
+.svc h3{font:600 1.15rem/1.3 var(--display);margin:6px 0 6px}
+.svc p{margin:0;color:var(--muted);font-size:.98rem}
+
+.certs{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.certs li{display:flex;align-items:baseline;gap:10px;padding:10px 14px;background:var(--sheet);border:1px solid var(--line);border-radius:4px}
+.certs code{font:500 .9rem var(--mono);color:var(--accent)}
+.certs span{font-size:.95rem}
+
+.edu{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:8px}
+.edu li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.edu b{font-weight:600}
+.edu span{color:var(--muted);font-size:.95rem}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 26px 24px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--muted)}
+.timeline li.now::before{background:var(--accent);border-color:var(--accent)}
+.timeline .when{font:500 .8rem var(--mono);color:var(--muted)}
+.timeline h3{font:600 1.1rem/1.3 var(--display);margin:2px 0 2px}
+.timeline p{margin:0;color:var(--muted)}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.proj{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.proj h3{font:600 1.2rem/1.3 var(--display);margin:0}
+.proj p{margin:0;color:var(--muted);flex:1}
+.proj .repo{font:500 .82rem var(--mono);word-break:break-all}
+.note{font-size:.9rem;color:var(--muted);margin-top:14px}
+
+.contact{display:grid;gap:12px;max-width:560px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:14px 16px;background:var(--sheet);border:1px solid var(--line);border-radius:4px}
+.row .k{font:500 .75rem var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;width:76px}
+.row .v{flex:1;min-width:0;word-break:break-all;user-select:all}
+.copy{font:500 .8rem var(--mono);background:none;border:1px solid var(--line);color:var(--ink);padding:5px 10px;border-radius:3px;cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:24px;font:400 .8rem var(--mono);color:var(--muted)}
+</style>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="#top">prc<b>/</b>azure</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Expertise</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Noida, India · 17 years · Azure</div>
+      <h1>Priyaranjan Chatterjee</h1>
+      <p class="role">Azure Presales Solution Architect · Cloud Transformation</p>
+      <p class="lede">I help enterprises move to Azure with secure, scalable landing zones and migration roadmaps that win the deal and hold up in delivery.</p>
+      <div class="ctas">
+        <a class="btn primary" href="https://www.linkedin.com/in/priyaranjan-chatterjee" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn ghost" href="#projects">View my work</a>
+      </div>
+    </div>
+    <svg class="topo" viewBox="0 0 320 300" role="img" aria-label="Hub-and-spoke Azure network diagram">
+      <g fill="none" stroke="var(--line)" stroke-width="2">
+        <line x1="160" y1="150" x2="60" y2="60"/><line x1="160" y1="150" x2="260" y2="60"/>
+        <line x1="160" y1="150" x2="60" y2="240"/><line x1="160" y1="150" x2="260" y2="240"/>
+      </g>
+      <g fill="none" stroke="var(--accent)" stroke-width="2">
+        <line class="flow" x1="60" y1="60" x2="160" y2="150"/><line class="flow" x1="260" y1="240" x2="160" y2="150"/>
+      </g>
+      <line x1="160" y1="150" x2="160" y2="286" stroke="var(--signal)" stroke-width="2" class="flow"/>
+      <g class="hub">
+        <rect x="112" y="124" width="96" height="52" rx="6" fill="var(--accent)"/>
+        <text x="160" y="146" text-anchor="middle">vnet-hub</text>
+        <text x="160" y="161" text-anchor="middle">fw · gw · bastion</text>
+      </g>
+      <g>
+        <rect x="14" y="38" width="92" height="44" rx="5" fill="var(--sheet)" stroke="var(--line)"/>
+        <text x="60" y="58" text-anchor="middle">spoke-prod</text><text x="60" y="72" text-anchor="middle">10.1.0.0/16</text>
+        <rect x="214" y="38" width="92" height="44" rx="5" fill="var(--sheet)" stroke="var(--line)"/>
+        <text x="260" y="58" text-anchor="middle">spoke-dev</text><text x="260" y="72" text-anchor="middle">10.2.0.0/16</text>
+        <rect x="14" y="218" width="92" height="44" rx="5" fill="var(--sheet)" stroke="var(--line)"/>
+        <text x="60" y="238" text-anchor="middle">spoke-data</text><text x="60" y="252" text-anchor="middle">10.3.0.0/16</text>
+        <rect x="214" y="218" width="92" height="44" rx="5" fill="var(--sheet)" stroke="var(--line)"/>
+        <text x="260" y="238" text-anchor="middle">spoke-ai</text><text x="260" y="252" text-anchor="middle">10.4.0.0/16</text>
+      </g>
+      <text x="168" y="292">on-prem · ExpressRoute</text>
+    </svg>
+  </div>
+</header>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="label"><b>01 · about</b>rg-profile</div>
+    <div class="content">
+      <h2>Turning business requirements into Azure solutions customers can buy</h2>
+      <p>I'm an Azure Presales Solution Architect with nearly 17 years in cloud architecture and enterprise infrastructure, currently a Cloud Solution Architect at HCL Technologies.</p>
+      <p>I lead presales engagements end to end: customer discovery, architecture workshops, RFP and RFI responses, estimates, TCO and ROI analysis, and client presentations. My designs cover landing zones, hybrid networking, security, governance, migration and modernisation, built to be secure, scalable and commercially viable.</p>
+      <p>Hands-on depth in Terraform, Azure DevOps and Infrastructure as Code lets me validate solutions with proofs of concept and hand them over cleanly to delivery.</p>
+      <div class="facts">
+        <div class="fact"><div class="n">17</div><div class="t">years in cloud &amp; infra</div></div>
+        <div class="fact"><div class="n">100+</div><div class="t">servers assessed for migration</div></div>
+        <div class="fact"><div class="n">~25%</div><div class="t">cloud cost reduction via FinOps</div></div>
+        <div class="fact"><div class="n">8</div><div class="t">cloud &amp; IT certifications</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="label"><b>02 · expertise</b>rg-capabilities</div>
+    <div class="content">
+      <h2>What I do</h2>
+      <div class="services">
+        <div class="svc"><div class="tag">presales</div><h3>Presales &amp; solutioning</h3><p>RFP and RFI responses, solution proposals, discovery sessions, workshops and executive presentations.</p></div>
+        <div class="svc"><div class="tag">governance</div><h3>Azure Landing Zones</h3><p>Enterprise architectures aligned with the Cloud Adoption Framework, with policy, RBAC and standard governance across subscriptions.</p></div>
+        <div class="svc"><div class="tag">networking</div><h3>Hybrid networking &amp; security</h3><p>Hub-spoke, Azure Firewall, Private Endpoints and ExpressRoute for enterprise and compliance-sensitive workloads.</p></div>
+        <div class="svc"><div class="tag">migration</div><h3>Migration &amp; modernisation</h3><p>Azure Migrate assessments, data center transformation, and migration roadmaps built from real dependency data.</p></div>
+        <div class="svc"><div class="tag">finops</div><h3>Estimation &amp; cost optimisation</h3><p>Solution estimates, Azure pricing, TCO and ROI models, right-sizing and reservations.</p></div>
+        <div class="svc"><div class="tag">automation</div><h3>Terraform &amp; Azure DevOps</h3><p>Reusable Terraform modules, IaC standards and CI/CD pipelines for infrastructure provisioning.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="certs">
+  <div class="wrap">
+    <div class="label"><b>03 · credentials</b>rg-certifications</div>
+    <div class="content">
+      <h2>Certifications &amp; education</h2>
+      <ul class="certs">
+        <li><code>AZ-305</code><span>Azure Solutions Architect Expert</span></li>
+        <li><code>AZ-700</code><span>Azure Network Engineer</span></li>
+        <li><code>AZ-104</code><span>Azure Administrator</span></li>
+        <li><code>AI-102</code><span>Azure AI Engineer</span></li>
+        <li><code>Terraform</code><span>HashiCorp Terraform Associate</span></li>
+        <li><code>AWS</code><span>AWS Solutions Architect – Associate</span></li>
+        <li><code>GCP</code><span>Google Cloud Digital Leader</span></li>
+        <li><code>ITIL</code><span>ITIL Foundation</span></li>
+      </ul>
+      <ul class="edu">
+        <li><b>M.Tech, Computer Science &amp; Infrastructure</b><span>BITS Pilani · 2024</span></li>
+        <li><b>B.Tech, Computer Science</b><span>AKTU</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="label"><b>04 · experience</b>rg-career</div>
+    <div class="content">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li class="now"><div class="when">Nov 2021 – present · Noida</div><h3>Cloud Solution Architect · HCL Technologies</h3><p>Lead Azure presales for enterprise customers: RFP responses, architecture workshops, landing zones across 10+ subscriptions, Azure Migrate assessments for 100+ servers, and Terraform with Azure DevOps CI/CD that cut provisioning effort by about 60%.</p></li>
+        <li><div class="when">Oct 2020 – Nov 2021</div><h3>Senior Solution Architect · Tata Communications</h3><p>Delivered Azure transformation solutions and multi-region landing zones, led presales and proposals, and reduced cloud spend by about 20–30% through TCO and ROI driven optimisation.</p></li>
+        <li><div class="when">Jun 2016 – Oct 2020</div><h3>Solution Architect · NTT DATA</h3><p>Led POCs and migrations that moved 50+ workloads from on-premises to Azure, specialising in data center migration, DRaaS and hybrid cloud.</p></li>
+        <li><div class="when">Dec 2014 – Jun 2016</div><h3>IT Analyst · Tata Consultancy Services</h3><p>Managed global infrastructure of 4,000+ servers and delivered HA and DR solutions with 99.9% uptime.</p></li>
+        <li><div class="when">Sep 2010 – Nov 2014</div><h3>Senior System Administrator · IBM India</h3><p>Managed 4,500+ enterprise servers and led root cause analysis that reduced recurring incidents.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="projects">
+  <div class="wrap">
+    <div class="label"><b>05 · work</b>rg-projects</div>
+    <div class="content">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="proj"><h3>DurgaConnect</h3><p>A community Durga Puja website I built and run, live at sdpbca.org.</p><a class="repo" href="https://sdpbca.org" target="_blank" rel="noopener">sdpbca.org →</a><a class="repo" href="https://github.com/prc-0910/DurgaConnect" target="_blank" rel="noopener">github.com/prc-0910/DurgaConnect →</a></div>
+        <div class="proj"><h3>More on GitHub</h3><p>Infrastructure as Code, automation and other work in progress.</p><a class="repo" href="https://github.com/prc-0910" target="_blank" rel="noopener">github.com/prc-0910 →</a></div>
+      </div>
+      <p class="note">Repositories are public to view; changes are made only by me.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="label"><b>06 · contact</b>rg-connect</div>
+    <div class="content">
+      <h2>Let's talk cloud</h2>
+      <p>Open to conversations about Azure architecture, presales and new opportunities.</p>
+      <div class="contact">
+        <div class="row"><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/priyaranjan-chatterjee" target="_blank" rel="noopener">linkedin.com/in/priyaranjan-chatterjee</a></div>
+        <div class="row"><span class="k">Email</span><span class="v" id="email">priyaranjan.chatterjee10@gmail.com</span><button class="copy" id="copyEmail" type="button">Copy</button></div>
+        <div class="row"><span class="k">GitHub</span><a class="v" href="https://github.com/prc-0910" target="_blank" rel="noopener">github.com/prc-0910</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Priyaranjan Chatterjee</span><span>Noida, India</span></div></footer>
+
+<script>
+document.getElementById('copyEmail').addEventListener('click',function(){
+  var b=this,t=document.getElementById('email').textContent;
+  var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+  try{navigator.clipboard.writeText(t).then(done,function(){selectEmail()})}catch(e){selectEmail()}
+  function selectEmail(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+});
+</script>
